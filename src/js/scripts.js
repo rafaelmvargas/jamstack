@@ -31,9 +31,10 @@ function showData(stories) {
     .map(
       (result) => `
     <div class="item">
+    <img src="${results.multimedia.url}" />
       <h3>${result.title}</h3>
       <p>${result.abstract}</p>
-      <p>${caption ? caption : 'no caption'}</p>
+      <p>${result.caption ? result.caption : ''}</p>
     </div>
   `
     )
@@ -52,3 +53,18 @@ function showData(stories) {
  * 5. target attributes to keep page open // why not security #20
  * jamstack-classone
  */
+
+function showStories(stories) {
+  fetch(API)
+    .then((response) => {
+      return response
+    })
+    .then((stories) => {
+      stories.forEach((story) => {
+        ;`
+        // HTML Here
+                
+        `
+      })
+    })
+}
