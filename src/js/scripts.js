@@ -48,4 +48,7 @@ function showData(stories) {
  * 1. author
  * 2. an image
  * 3. caption
+ * 4. click title, go to article
+ * 5. target attributes to keep page open // why not security #20
+ * jamstack-classone
  */
