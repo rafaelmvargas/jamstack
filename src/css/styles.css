@@ -61,3 +61,15 @@ button {
 .pictures h1 {
   color: green;
 }
+
+@media (min-width: 480px) {
+  .stories {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 2rem;
+  }
+}
+
+.stories .item {
+  border-bottom: 1px dashed #aaa;
+}

@@ -63,11 +63,15 @@ function showData(stories) {
       <h5 class="byline">${story.byline}</h5>
       <figure>
         <img
-          src="${story.multimedia.url}"
-          alt="${story.multimedia.copyright}"
+          src="${story.multimedia[0].url}"
+          alt="${story.multimedia[0].copyright}"
           class="articleMainPicture"
         />
-        <figcaption>${story.multimedia[0].caption}</figcaption>
+        <figcaption>${
+          story.multimedia[0].caption
+            ? story.multimedia[0].caption
+            : 'Copyright nytimes.com'
+        }</figcaption>
       </figure>
 
       <p>${story.abstract}</p>
