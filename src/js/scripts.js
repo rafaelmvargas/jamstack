@@ -26,22 +26,22 @@ function clickHandlers(event) {
 //   document.querySelector('.stories').innerHTML = looped
 // }
 
-function showData(stories) {
-  var looped = stories
-    .map(
-      (result) => `
-    <div class="item">
-    <img src="${results.multimedia.url}" />
-      <h3>${result.title}</h3>
-      <p>${result.abstract}</p>
-      <p>${result.caption ? result.caption : ''}</p>
-    </div>
-  `
-    )
-    .join('')
+// function showData(stories) {
+//   var looped = stories
+//     .map(
+//       (result) => `
+//     <div class="item">
+//     <img src="${results.multimedia.url}" />
+//       <h3>${result.title}</h3>
+//       <p>${result.abstract}</p>
+//       <p>${result.caption ? result.caption : ''}</p>
+//     </div>
+//   `
+//     )
+//     .join('')
 
-  document.querySelector('.stories').innerHTML = looped
-}
+//   document.querySelector('.stories').innerHTML = looped
+// }
 
 // TODO:HW include author and picture and lay it out in CSS
 /**
@@ -54,17 +54,29 @@ function showData(stories) {
  * jamstack-classone
  */
 
-function showStories(stories) {
-  fetch(API)
-    .then((response) => {
-      return response
-    })
-    .then((stories) => {
-      stories.forEach((story) => {
-        ;`
-        // HTML Here
-                
+function showData(stories) {
+  var looped = stories
+    .map((story) => {
+      return `
+    <div class="item">
+      <h3><a href="${story.url}" target="_blank">${story.title}</a></h3>
+      <h5 class="byline">${story.byline}</h5>
+      <figure>
+        <img
+          src="${story.multimedia.url}"
+          alt="${story.multimedia.copyright}"
+          class="articleMainPicture"
+        />
+        <figcaption>${story.multimedia[0].caption}</figcaption>
+      </figure>
+
+      <p>${story.abstract}</p>
+
+      
+    </div>
         `
-      })
     })
+    .join('')
+
+  document.querySelector('.stories').innerHTML = looped
 }

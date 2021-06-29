@@ -1,0 +1,18 @@
+{
+  "configurations": [
+    {
+      "name": "Launch Edge",
+      "request": "launch",
+      "type": "pwa-msedge",
+      "url": "http://localhost:8080",
+      "webRoot": "${workspaceFolder}/dist/"
+    },
+    {
+      "name": "Launch Chrome",
+      "request": "launch",
+      "type": "pwa-chrome",
+      "url": "http://localhost:8080",
+      "webRoot": "${workspaceFolder}/dist/"
+    }
+  ]
+}

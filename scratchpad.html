@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="item">
+      <h3><a href="${story.url}" target="_blank">${story.title}</a></h3>
+      <h5 class="byline">${story.byline}</h5>
+      <figure>
+        <img
+          src="${story.multimedia.url}"
+          alt="${story.multimedia.copyright}"
+          class="articleMainPicture"
+        />
+        <figcaption>${story.multimedia[0].caption}</figcaption>
+      </figure>
+
+      <p>${story.abstract}</p>
+
+      
+    </div>
+  </body>
+</html>
